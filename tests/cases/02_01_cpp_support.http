@@ -1,0 +1,115 @@
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0}
+###
+# Got response:
+# HTTP 200
+# content-length: 377
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:56 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:18:56.870Z","id":0,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/0 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 426
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:57 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":125428},{"id":1,"info":"","memory":0,"result":"Accepted","time":58281}],"created_time":"2022-09-09T02:18:56.870Z","id":0,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0},"updated_time":"2022-09-09T02:18:57.059Z"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"C","problem_id":0,"source_code":"#include <stdio.h>\nint main() { printf(\"Hello World!\\n\"); return 0; }","user_id":0}
+###
+# Got response:
+# HTTP 200
+# content-length: 406
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:57 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:18:57.884Z","id":1,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"C","problem_id":0,"source_code":"#include <stdio.h>\nint main() { printf(\"Hello World!\\n\"); return 0; }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/1 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 456
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:58 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":346444},{"id":1,"info":"","memory":0,"result":"Accepted","time":280917}],"created_time":"2022-09-09T02:18:57.884Z","id":1,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"C","problem_id":0,"source_code":"#include <stdio.h>\nint main() { printf(\"Hello World!\\n\"); return 0; }","user_id":0},"updated_time":"2022-09-09T02:18:58.517Z"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"C++","problem_id":0,"source_code":"#include <iostream>\nint main() { std::cout<<\"Hello World!\"<<std::endl; return 0; }","user_id":0}
+###
+# Got response:
+# HTTP 200
+# content-length: 420
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:58 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:18:58.897Z","id":2,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"C++","problem_id":0,"source_code":"#include <iostream>\nint main() { std::cout<<\"Hello World!\"<<std::endl; return 0; }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/2 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 419
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:18:59 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Running","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:18:58.897Z","id":2,"result":"Running","score":0.0,"state":"Running","submission":{"contest_id":0,"language":"C++","problem_id":0,"source_code":"#include <iostream>\nint main() { std::cout<<\"Hello World!\"<<std::endl; return 0; }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/2 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 471
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# access-control-expose-headers: content-type
+# date: Fri, 09 Sep 2022 02:19:00 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":1362071},{"id":1,"info":"","memory":0,"result":"Accepted","time":279244}],"created_time":"2022-09-09T02:18:58.897Z","id":2,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"C++","problem_id":0,"source_code":"#include <iostream>\nint main() { std::cout<<\"Hello World!\"<<std::endl; return 0; }","user_id":0},"updated_time":"2022-09-09T02:19:00.544Z"}

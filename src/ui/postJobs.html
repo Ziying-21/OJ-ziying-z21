@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .up_cell {
+                text-align: center;
+            }
+            .low_cell {
+                text-align: center;
+            }
+            .up_result {
+                text-align: center;
+            }
+            .low_result {
+                text-align: center;
+            }
+            #up_head_id {
+                width: 100px;
+            }
+            #up_head_user {
+                width: 130px;
+            }
+            #up_head_problem {
+                width: 200px;
+            }
+            #up_head_language {
+                width: 150px;
+            }
+            #up_head_state {
+                width: 230px;
+            }
+            #up_head_score {
+                width: 100px;
+            }
+            #up_head_time {
+                width: 600px;
+            }
+            #low_head_id {
+                width: 99px;
+            }
+            #low_head_state {
+                width: 578px;
+            }
+            #low_head_time {
+                width: 116px;
+            }
+            #low_head_memory {
+                width: 116px;
+            }
+            #low_head_info {
+                width: 600px;
+            }
+            .up_row {
+                background-color: rgb(203, 238, 248);
+                height: 37px;
+            }
+            .low_row {
+                height: 37px;
+            }
+            #table_1 {
+                border-collapse: collapse;
+            }
+            #table_1 :hover {
+                background-color: rgb(172, 228, 243);
+            }
+            #table_1 .up_head_row {
+                background-color: rgb(172, 228, 243);
+            }
+            #table_2 {
+                border-collapse: collapse;
+            }
+            #table_2 :hover {
+                background-color: rgb(230, 230, 230);
+            }
+            #table_2 .low_head_row {
+                background-color: rgb(230, 230, 230);
+            }
+            .Accepted {
+                border-radius: 4px 4px;
+                font-size: smaller;
+                font-weight: bolder;
+                color: white;
+                background-color: rgb(76, 216, 80);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Success {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(80, 197, 214);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Running {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(219, 230, 91);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Waiting {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(80, 197, 214);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Error {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(236, 77, 45);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Wrong {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(236, 77, 45);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .Exceeded {
+                border-radius: 4px 4px;
+                color: white;
+                font-size: smaller;
+                font-weight: bolder;
+                background-color: rgb(236, 77, 45);
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            
+        </style>
+        <meta charset="UTF-8" />
+        <title>OJ PostJobs</title>
+        <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+        <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+        <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    </head>
+    <body>
+        <h2>Please submit your program</h2>
+
+        <span>User Id: </span>
+        <input id = "user_id" type="textr">
+    </br></br>
+        <span>Problem Id: </span>
+        <input id = "problem_id" type="text">
+    </br></br>
+        <span>Language: </span>
+        <select id = "language">
+            <option value ="Rust">Rust</option>
+            <option value ="C">C</option>
+            <option value="C++">C++</option>
+        </select>
+    </br></br>
+        <span>Contest Id: </span>
+        <input id = "contest_id" type="text">
+    </br></br>
+        <span>Source Code: </span>
+        <div id="source_code" class="textdiv" contenteditable="true" v-html="formData.resumeExp" @blur="formData.resumeExp=$event.target.innerText" 
+        style="width : 60%; border : 1px solid ; border-radius: 2px 2px"></div>
+        <button onclick="post()">Submit</button>
+        <button onclick="refresh()">Refresh</button>
+        <h1>Details</h1>
+        <hr/>
+        <div id = "state"></div>
+
+
+
+        <script type="text/babel">
+            var index = -1;// 记录当前提交的job
+            function post() {
+                var source_code = document.getElementById("source_code").innerText;
+                var language = document.getElementById("language").value;
+                // 处理User_id
+                var user_id = document.getElementById("user_id").value;
+                if (user_id=="") {
+                    alert("User id cannot be null");
+                    return;
+                }
+                if (isNaN(user_id)) {
+                    alert("User id must be a number");
+                    return;
+                }
+                if (user_id<0) {
+                    alert("User id cannot be less than 0");
+                    return;
+                }
+                // 处理problem_id
+                var problem_id = document.getElementById("problem_id").value;
+                if (problem_id=="") {
+                    alert("Problem id cannot be null");
+                    return;
+                }
+                if (isNaN(problem_id)) {
+                    alert("Problem id must be a number");
+                    return;
+                }
+                if (problem_id<0) {
+                    alert("Problem id cannot be less than 0");
+                    return;
+                }
+                // 处理contest_id
+                var contest_id = document.getElementById("contest_id").value;
+                if (contest_id=="") {
+                    alert("Contest id cannot be null");
+                    return;
+                }
+                if (isNaN(contest_id)) {
+                    alert("Contest id must be a number");
+                    return;
+                }
+                if (contest_id<0) {
+                    alert("Contest id cannot be less than 0");
+                    return;
+                }
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("POST","http://127.0.0.1:12345/jobs",true);
+                xmlhttp.setRequestHeader("Content-type", "application/json");
+                xmlhttp.send(JSON.stringify(
+                    {
+                        "source_code": source_code,
+                        "language": language,
+                        "user_id": parseInt(user_id),
+                        "contest_id": parseInt(contest_id),
+                        "problem_id": parseInt(problem_id)
+                    }
+                ));														
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4) {									
+                        if (xmlhttp.status == 200) {
+                            //alert(1)
+                            var result = JSON.parse(xmlhttp.response);
+                            index = result.id;
+                            //alert(2)
+                            var table_1 = (
+                                <table id="table_1">
+                                    <tr className="up_head_row">
+                                        <th className="up_head" id="up_head_id">Id</th>
+                                        <th className="up_head" id="up_head_user">User</th>
+                                        <th className="up_head" id="up_head_problem">Problem</th>
+                                        <th className="up_head" id="up_head_language">Language</th>
+                                        <th className="up_head" id="up_head_state">State</th>
+                                        <th className="up_head" id="up_head_score">Score</th>
+                                        <th className="up_head" id="up_head_time">Time</th>
+                                    </tr>
+                                    <tr className="up_row">
+                                        <td className="up_cell">{result.id}</td>
+                                        <td className="up_cell">{result.submission.user_id}</td>
+                                        <td className="up_cell">{result.submission.problem_id}</td>
+                                        <td className="up_cell">{result.submission.language}</td>
+                                        <td className="up_result"><span className={result.result}>{result.result}</span></td>
+                                        <td className="up_cell">{result.score}</td>
+                                        <td className="up_cell">{result.updated_time}</td>
+                                    </tr>
+                                </table>
+                            );
+                            //alert(3)
+                            var table_2 = result.cases.map((cas) => 
+                                <tr className="low_row">
+                                    <td className="low_cell">{cas.id}</td>
+                                    <td className="low_result"><span className={cas.result}>{cas.result}</span></td>
+                                    <td className="low_cell">{cas.time}</td>
+                                    <td className="low_cell">{cas.memory}</td>
+                                    <td className="low_cell">{cas.info}</td>
+                                </tr>
+                            )
+                            //alert(4)
+                            ReactDOM.render(
+                                <div>
+                                    {table_1}
+                                    <hr/>
+                                    <table id="table_2">
+                                        <tr className="low_head_row">
+                                            <th className="low_head" id="low_head_id">Id</th>
+                                            <th className="low_head" id="low_head_state">State</th>
+                                            <th className="low_head" id="low_head_time">Time</th>
+                                            <th className="low_head" id="low_head_memory">Memory</th>
+                                            <th className="low_head" id="low_head_info">Info</th>
+                                        </tr>
+                                        {table_2}
+                                    </table>
+                                </div>
+                                ,
+                                document.getElementById('state')
+                            );
+                        } else {
+                            alert(xmlhttp.response)
+                            return;
+                        }
+                    }
+                }					
+            }
+
+
+            function refresh() {
+                if (index < 0) {
+                    alert("You hanen't submit a program.");
+                    return;
+                }
+                var xmlhttp_2 = new XMLHttpRequest();
+                xmlhttp_2.open("GET","http://127.0.0.1:12345/jobs/"+index,true);
+                xmlhttp_2.send();
+                xmlhttp_2.onreadystatechange = function() {
+                    if (xmlhttp_2.readyState == 4) {
+                        if (xmlhttp_2.status == 200){
+                            //alert("ppp")
+                            var result_2 = JSON.parse(xmlhttp_2.response);
+                            //alert("add")
+                            var table_1 = (
+                                <table id="table_1">
+                                    <tr className="up_head_row">
+                                        <th className="up_head" id="up_head_id">Id</th>
+                                        <th className="up_head" id="up_head_user">User</th>
+                                        <th className="up_head" id="up_head_problem">Problem</th>
+                                        <th className="up_head" id="up_head_language">Language</th>
+                                        <th className="up_head" id="up_head_state">State</th>
+                                        <th className="up_head" id="up_head_score">Score</th>
+                                        <th className="up_head" id="up_head_time">Time</th>
+                                    </tr>
+                                    <tr className="up_row">
+                                        <td className="up_cell">{result_2.id}</td>
+                                        <td className="up_cell">{result_2.submission.user_id}</td>
+                                        <td className="up_cell">{result_2.submission.problem_id}</td>
+                                        <td className="up_cell">{result_2.submission.language}</td>
+                                        <td className="up_result"><span className={result_2.result}>{result_2.result}</span></td>
+                                        <td className="up_cell">{result_2.score}</td>
+                                        <td className="up_cell">{result_2.updated_time}</td>
+                                    </tr>
+                                </table>
+                            );
+                            var table_2 = result_2.cases.map((cas) => 
+                                <tr className="low_row">
+                                    <td className="low_cell">{cas.id}</td>
+                                    <td className="low_result"><span className={cas.result}>{cas.result}</span></td>
+                                    <td className="low_cell">{cas.time}</td>
+                                    <td className="low_cell">{cas.memory}</td>
+                                    <td className="low_cell">{cas.info}</td>
+                                </tr>
+                            )
+                        
+                            ReactDOM.render(
+                                <div>
+                                    {table_1}
+                                    <br/>
+                                    <table id="table_2">
+                                        <tr className="low_head_row">
+                                            <th className="low_head" id="low_head_id">Id</th>
+                                            <th className="low_head" id="low_head_state">State</th>
+                                            <th className="low_head" id="low_head_time">Time</th>
+                                            <th className="low_head" id="low_head_memory">Memory</th>
+                                            <th className="low_head" id="low_head_info">Info</th>
+                                        </tr>
+                                        {table_2}
+                                    </table>
+                                </div>
+                                ,
+                                document.getElementById('state')
+                            );
+                        }
+                    } 
+                }
+            }
+        </script>
+    </body>
+</html>

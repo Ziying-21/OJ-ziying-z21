@@ -1,0 +1,16 @@
+name: MyOJ
+version: "1.0"
+about: Learn use Rust Crate!
+author: ziying-z21
+
+args:
+    - config:
+        help: Read the configuration described in the configuration document. If the configuration file path is not specified, an error will be reported to exit.
+        short: c
+        long: config
+        takes_value: true
+
+    - flush-data:
+        help: Clear all persistent states on startup
+        short: f
+        long: flush-data

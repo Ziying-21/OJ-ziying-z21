@@ -1,0 +1,20 @@
+[2022-09-09T02:24:20Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:24:20Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:24:21Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000163
+[2022-09-09T02:24:21Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 385 "-" "-" 0.000582
+[2022-09-09T02:24:21Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 385 "-" "-" 0.000818
+[2022-09-09T02:24:21Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 385 "-" "-" 0.002125
+[2022-09-09T02:24:21Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 384 "-" "-" 0.000290
+[2022-09-09T02:24:22Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000510
+[2022-09-09T02:24:23Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000276
+[2022-09-09T02:24:24Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000350
+[2022-09-09T02:24:25Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000287
+[2022-09-09T02:24:26Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000216
+[2022-09-09T02:24:27Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000345
+[2022-09-09T02:24:28Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000263
+[2022-09-09T02:24:29Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000337
+[2022-09-09T02:24:30Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000327
+[2022-09-09T02:24:31Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 401 "-" "-" 0.000217
+[2022-09-09T02:24:32Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 457 "-" "-" 0.000315
+[2022-09-09T02:24:32Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/1 HTTP/1.1" 200 457 "-" "-" 0.000104
+[2022-09-09T02:24:32Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 457 "-" "-" 0.000098

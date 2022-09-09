@@ -1,0 +1,32 @@
+[package]
+name = "oj"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.1.0"
+clap = { version = "3.2.18", features = ["yaml"]}
+env_logger = "0.9.0"
+log = "0.4.17"
+serde = "1.0.144"
+serde_derive = "1.0.144"
+serde_json = "1.0.85"
+crossterm = "0.25"
+chrono = "0.4.22"
+time = "0.3.14"
+condvar = "0.1.1"
+wait-timeout = "0.2.0"
+lazy_static = "1.4.0"
+crossbeam = "0.8.2"
+actix-rt = "2.7.0"
+actix-cors = "0.6.2"
+
+[dev-dependencies]
+assert-json-diff = "2.0.2"
+lazy_static = "1.4.0"
+pretty_assertions = "1.2.1"
+serde_json = "1.0.85"
+serde = { version = "1.0.144", features = ["derive"] }
+reqwest = { version = "0.11", features = ["json", "blocking"] }

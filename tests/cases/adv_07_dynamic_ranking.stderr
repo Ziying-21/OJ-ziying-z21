@@ -1,0 +1,17 @@
+[2022-09-09T02:24:43Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:24:43Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:24:44Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000254
+[2022-09-09T02:24:44Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000757
+[2022-09-09T02:24:44Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000593
+[2022-09-09T02:24:44Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 436 "-" "-" 0.000445
+[2022-09-09T02:24:45Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 483 "-" "-" 0.000299
+[2022-09-09T02:42:17Z INFO  actix_server::server] SIGTERM received; starting graceful shutdown
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker
+[2022-09-09T02:42:17Z INFO  actix_server::accept] Accept thread stopped
+[2022-09-09T02:42:17Z INFO  actix_server::worker] Shutting down idle worker

@@ -1,0 +1,17 @@
+[2022-09-09T02:19:34Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:19:34Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:19:35Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000182
+[2022-09-09T02:19:35Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000524
+[2022-09-09T02:19:35Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000652
+[2022-09-09T02:19:35Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1137 "-" "-" 0.000452
+[2022-09-09T02:19:36Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1222 "-" "-" 0.000434
+[2022-09-09T02:19:36Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.001144
+[2022-09-09T02:19:37Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/1 HTTP/1.1" 200 426 "-" "-" 0.000291
+[2022-09-09T02:19:37Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1122 "-" "-" 0.001121
+[2022-09-09T02:19:38Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 1208 "-" "-" 0.000657
+[2022-09-09T02:19:38Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.002246
+[2022-09-09T02:19:39Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/3 HTTP/1.1" 200 432 "-" "-" 0.000289
+[2022-09-09T02:19:39Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=highest HTTP/1.1" 200 201 "-" "-" 0.000220
+[2022-09-09T02:19:39Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=highest&tie_breaker=user_id HTTP/1.1" 200 201 "-" "-" 0.000155
+[2022-09-09T02:19:39Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=highest&tie_breaker=submission_count HTTP/1.1" 200 201 "-" "-" 0.000165
+[2022-09-09T02:19:39Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=highest&tie_breaker=submission_time HTTP/1.1" 200 201 "-" "-" 0.000160

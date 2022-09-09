@@ -1,0 +1,230 @@
+###
+# Send request:
+POST http://127.0.0.1:12345/users HTTP/1.1
+content-type: application/json
+
+{"name":"user1"}
+###
+# Got response:
+# HTTP 200
+# content-length: 23
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:35 GMT
+# 
+# {"id":1,"name":"user1"}
+###
+# Send request:
+POST http://127.0.0.1:12345/users HTTP/1.1
+content-type: application/json
+
+{"name":"user2"}
+###
+# Got response:
+# HTTP 200
+# content-length: 23
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:35 GMT
+# 
+# {"id":2,"name":"user2"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"Rust","problem_id":1,"source_code":"fn main() {let mut line1 = String::new();std::io::stdin().read_line(&mut line1).unwrap();let a: i32 = line1.trim().parse().unwrap();let mut line2 = String::new();std::io::stdin().read_line(&mut line2).unwrap();let b: i32 = line2.trim().parse().unwrap();println!(\"{}\", a + b);}","user_id":2}
+###
+# Got response:
+# HTTP 200
+# content-length: 1137
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:35 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0},{"id":2,"info":"","memory":0,"result":"Waiting","time":0},{"id":3,"info":"","memory":0,"result":"Waiting","time":0},{"id":4,"info":"","memory":0,"result":"Waiting","time":0},{"id":5,"info":"","memory":0,"result":"Waiting","time":0},{"id":6,"info":"","memory":0,"result":"Waiting","time":0},{"id":7,"info":"","memory":0,"result":"Waiting","time":0},{"id":8,"info":"","memory":0,"result":"Waiting","time":0},{"id":9,"info":"","memory":0,"result":"Waiting","time":0},{"id":10,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:19:35.559Z","id":0,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"Rust","problem_id":1,"source_code":"fn main() {let mut line1 = String::new();std::io::stdin().read_line(&mut line1).unwrap();let a: i32 = line1.trim().parse().unwrap();let mut line2 = String::new();std::io::stdin().read_line(&mut line2).unwrap();let b: i32 = line2.trim().parse().unwrap();println!(\"{}\", a + b);}","user_id":2},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/0 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 1222
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:36 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":159043},{"id":1,"info":"","memory":0,"result":"Accepted","time":61544},{"id":2,"info":"","memory":0,"result":"Accepted","time":1769},{"id":3,"info":"","memory":0,"result":"Accepted","time":1512},{"id":4,"info":"","memory":0,"result":"Accepted","time":1561},{"id":5,"info":"","memory":0,"result":"Accepted","time":1475},{"id":6,"info":"","memory":0,"result":"Accepted","time":1570},{"id":7,"info":"","memory":0,"result":"Accepted","time":1531},{"id":8,"info":"","memory":0,"result":"Accepted","time":1864},{"id":9,"info":"","memory":0,"result":"Accepted","time":1840},{"id":10,"info":"","memory":0,"result":"Accepted","time":1495}],"created_time":"2022-09-09T02:19:35.559Z","id":0,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"Rust","problem_id":1,"source_code":"fn main() {let mut line1 = String::new();std::io::stdin().read_line(&mut line1).unwrap();let a: i32 = line1.trim().parse().unwrap();let mut line2 = String::new();std::io::stdin().read_line(&mut line2).unwrap();let b: i32 = line2.trim().parse().unwrap();println!(\"{}\", a + b);}","user_id":2},"updated_time":"2022-09-09T02:19:35.809Z"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0}
+###
+# Got response:
+# HTTP 200
+# content-length: 377
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:36 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:19:36.575Z","id":1,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/1 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 426
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:37 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":122807},{"id":1,"info":"","memory":0,"result":"Accepted","time":64180}],"created_time":"2022-09-09T02:19:36.575Z","id":1,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World!\"); }","user_id":0},"updated_time":"2022-09-09T02:19:36.770Z"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"Rust","problem_id":2,"source_code":"fn main() {let mut data: Vec<u32> = Vec::new();loop {let mut line = String::new();if std::io::stdin().read_line(&mut line).unwrap() == 0 {break;}data.push(line.trim().parse().unwrap());}data.sort_by_key(|&x| x);data.into_iter().for_each(|x| println!(\"{}\", x));}","user_id":1}
+###
+# Got response:
+# HTTP 200
+# content-length: 1122
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:37 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0},{"id":2,"info":"","memory":0,"result":"Waiting","time":0},{"id":3,"info":"","memory":0,"result":"Waiting","time":0},{"id":4,"info":"","memory":0,"result":"Waiting","time":0},{"id":5,"info":"","memory":0,"result":"Waiting","time":0},{"id":6,"info":"","memory":0,"result":"Waiting","time":0},{"id":7,"info":"","memory":0,"result":"Waiting","time":0},{"id":8,"info":"","memory":0,"result":"Waiting","time":0},{"id":9,"info":"","memory":0,"result":"Waiting","time":0},{"id":10,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:19:37.588Z","id":2,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"Rust","problem_id":2,"source_code":"fn main() {let mut data: Vec<u32> = Vec::new();loop {let mut line = String::new();if std::io::stdin().read_line(&mut line).unwrap() == 0 {break;}data.push(line.trim().parse().unwrap());}data.sort_by_key(|&x| x);data.into_iter().for_each(|x| println!(\"{}\", x));}","user_id":1},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/2 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 1208
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:38 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":209621},{"id":1,"info":"","memory":0,"result":"Accepted","time":395144},{"id":2,"info":"","memory":0,"result":"Accepted","time":2089},{"id":3,"info":"","memory":0,"result":"Accepted","time":1695},{"id":4,"info":"","memory":0,"result":"Accepted","time":1577},{"id":5,"info":"","memory":0,"result":"Accepted","time":1564},{"id":6,"info":"","memory":0,"result":"Accepted","time":1801},{"id":7,"info":"","memory":0,"result":"Accepted","time":2059},{"id":8,"info":"","memory":0,"result":"Accepted","time":1558},{"id":9,"info":"","memory":0,"result":"Accepted","time":1793},{"id":10,"info":"","memory":0,"result":"Accepted","time":1854}],"created_time":"2022-09-09T02:19:37.588Z","id":2,"result":"Accepted","score":100.0,"state":"Finished","submission":{"contest_id":0,"language":"Rust","problem_id":2,"source_code":"fn main() {let mut data: Vec<u32> = Vec::new();loop {let mut line = String::new();if std::io::stdin().read_line(&mut line).unwrap() == 0 {break;}data.push(line.trim().parse().unwrap());}data.sort_by_key(|&x| x);data.into_iter().for_each(|x| println!(\"{}\", x));}","user_id":1},"updated_time":"2022-09-09T02:19:38.224Z"}
+###
+# Send request:
+POST http://127.0.0.1:12345/jobs HTTP/1.1
+content-type: application/json
+
+{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World.\"); }","user_id":0}
+###
+# Got response:
+# HTTP 200
+# content-length: 377
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:38 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Waiting","time":0},{"id":1,"info":"","memory":0,"result":"Waiting","time":0}],"created_time":"2022-09-09T02:19:38.606Z","id":3,"result":"Waiting","score":0.0,"state":"Queueing","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World.\"); }","user_id":0},"updated_time":""}
+###
+# Send request:
+GET http://127.0.0.1:12345/jobs/3 HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 432
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:39 GMT
+# 
+# {"cases":[{"id":0,"info":"","memory":0,"result":"Compilation Success","time":127983},{"id":1,"info":"","memory":0,"result":"Wrong Answer","time":63803}],"created_time":"2022-09-09T02:19:38.606Z","id":3,"result":"Wrong Answer","score":0.0,"state":"Finished","submission":{"contest_id":0,"language":"Rust","problem_id":0,"source_code":"fn main() { println!(\"Hello World.\"); }","user_id":0},"updated_time":"2022-09-09T02:19:38.804Z"}
+###
+# Send request:
+GET http://127.0.0.1:12345/contests/0/ranklist?scoring_rule=highest HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 201
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:39 GMT
+# 
+# [{"rank":1,"scores":[100.0,0.0,0.0],"user":{"id":0,"name":"root"}},{"rank":1,"scores":[0.0,0.0,100.0],"user":{"id":1,"name":"user1"}},{"rank":1,"scores":[0.0,100.0,0.0],"user":{"id":2,"name":"user2"}}]
+###
+# Send request:
+GET http://127.0.0.1:12345/contests/0/ranklist?scoring_rule=highest&tie_breaker=user_id HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 201
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:39 GMT
+# 
+# [{"rank":1,"scores":[100.0,0.0,0.0],"user":{"id":0,"name":"root"}},{"rank":2,"scores":[0.0,0.0,100.0],"user":{"id":1,"name":"user1"}},{"rank":3,"scores":[0.0,100.0,0.0],"user":{"id":2,"name":"user2"}}]
+###
+# Send request:
+GET http://127.0.0.1:12345/contests/0/ranklist?scoring_rule=highest&tie_breaker=submission_count HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 201
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:39 GMT
+# 
+# [{"rank":1,"scores":[0.0,0.0,100.0],"user":{"id":1,"name":"user1"}},{"rank":1,"scores":[0.0,100.0,0.0],"user":{"id":2,"name":"user2"}},{"rank":3,"scores":[100.0,0.0,0.0],"user":{"id":0,"name":"root"}}]
+###
+# Send request:
+GET http://127.0.0.1:12345/contests/0/ranklist?scoring_rule=highest&tie_breaker=submission_time HTTP/1.1
+
+
+###
+# Got response:
+# HTTP 200
+# content-length: 201
+# access-control-expose-headers: content-type
+# access-control-allow-credentials: true
+# content-type: application/json
+# vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+# date: Fri, 09 Sep 2022 02:19:39 GMT
+# 
+# [{"rank":1,"scores":[0.0,100.0,0.0],"user":{"id":2,"name":"user2"}},{"rank":2,"scores":[100.0,0.0,0.0],"user":{"id":0,"name":"root"}},{"rank":3,"scores":[0.0,0.0,100.0],"user":{"id":1,"name":"user1"}}]

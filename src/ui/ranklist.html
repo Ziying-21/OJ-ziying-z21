@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>OJ-Ranklist</title>
+    <style>
+    
+        .cell_rows {
+            background-color: rgb(248, 248, 248);
+        }
+        .cell {
+            text-align: center;
+            height: 37px;
+        }
+        .detailed_scores {
+            width: 1000px;
+            text-align: center;
+        }
+        .score {
+           display: inline-block;
+           width: 50px;
+           text-align: center;
+        }
+        .head {
+            width: 100px;
+            background-color: rgb(230, 230, 230)
+        }
+        .score_head {
+            background-color: rgb(230, 230, 230)
+        }
+        #ranklist {
+            border-collapse: collapse;
+        }
+        #ranklist :hover  {
+            background-color: rgb(230, 230, 230)
+        }
+
+
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Ranklist</h1>
+    <span>Contest Id: </span>
+    <input id="contest_id" type="text">
+    <br/>
+    <span>Scoring Rule: </span>
+    <select id="scoring_rule">
+        <option value="latest">Latest</option>
+        <option value="highest">Highest</option>
+    </select>
+    <br/>
+    <span>Tie Breaker: </span>
+    <select id="tie_breaker">
+        <option value="submission_time">Submission Time</option>
+        <option value="submission_count">Submission Count</option>
+        <option value="user_id">User Id</option>
+        <option value="none">None</option>
+    </select>
+    <br/>
+    <button onclick="getRanklist()">GET</button>
+    <h2 style="font-size: 33px;">Ranklist</h2>
+<hr/>
+    <div id="ranklist"></div>
+
+<script type="text/babel">
+    function getRanklist() {
+        var contest_id = document.getElementById("contest_id").value;
+        if (contest_id == "") {
+            alert("Please input the contest id");
+            return;
+        }
+        if (isNaN(contest_id)) {
+            alert("Please input a number");
+            return;
+        }
+        if (contest_id < 0) {
+            alert("The contest id cannot be less than 0");
+            return;
+        }
+        var scoring_rule = document.getElementById("scoring_rule").value;
+        var tie_breaker = document.getElementById("tie_breaker").value;
+        var url = "http://127.0.0.1:12345/contests/" + contest_id + "/ranklist?scoring_rule=" + scoring_rule;
+        if (tie_breaker!="none") {
+            url += ("&tie_breaker=" + tie_breaker);
+        }
+
+        var xmlhttp = new XMLHttpRequest();
+        //var result;
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+                var result = JSON.parse(xmlhttp.response); //获取到的json数据
+                var list_items = result.map((students) => 
+                    <tr className ="cell_rows">
+                        <td className="cell">{students.rank}</td>
+                        <td className="cell">{students.user.id}</td>
+                        <td className="cell">{students.user.name}</td>
+                        <td className="cell">{eval(students.scores.join("+"))}</td>
+                        <td className="detailed_scores">{students.scores.map((score) => 
+                            <span className="score">{score}</span>
+                        )}</td>
+                    </tr>
+                )
+                ReactDOM.render(
+                    <table id="ranklist">
+                        <tr>
+                            <th className="head">#</th>
+                            <th className="head">Id</th>
+                            <th className="head">Name</th>
+                            <th className="head">Total Score</th>
+                            <th className="score_head">Detailed Scores</th>
+                        </tr>
+                    {list_items}
+                    </table>,
+                    document.getElementById('ranklist')
+                );
+            } else if (xmlhttp.readyState == 4) {
+                // 请求失败 弹出错误信息并返回
+                alert(xmlhttp.response);
+                return;
+            }
+        }
+    }
+</script>
+</body>
+</html>

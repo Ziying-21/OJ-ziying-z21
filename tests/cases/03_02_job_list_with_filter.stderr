@@ -1,0 +1,15 @@
+[2022-09-09T02:19:07Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:19:07Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:19:08Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000197
+[2022-09-09T02:19:08Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1137 "-" "-" 0.000661
+[2022-09-09T02:19:09Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1222 "-" "-" 0.000363
+[2022-09-09T02:19:09Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1122 "-" "-" 0.001060
+[2022-09-09T02:19:10Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/1 HTTP/1.1" 200 1207 "-" "-" 0.000711
+[2022-09-09T02:19:10Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 406 "-" "-" 0.002289
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 454 "-" "-" 0.000281
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs?result=Accepted HTTP/1.1" 200 2887 "-" "-" 0.000235
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs?problem_id=0&state=Finished HTTP/1.1" 200 456 "-" "-" 0.000105
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs?problem_id=0&state=Finished HTTP/1.1" 200 456 "-" "-" 0.000098
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs?language=C HTTP/1.1" 200 456 "-" "-" 0.000096
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 454 "-" "-" 0.000108
+[2022-09-09T02:19:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1222 "-" "-" 0.000131

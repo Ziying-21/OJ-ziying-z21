@@ -1,0 +1,17 @@
+[2022-09-09T02:24:11Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:24:11Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000240
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000605
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /contests HTTP/1.1" 200 147 "-" "-" 0.000322
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /contests HTTP/1.1" 200 147 "-" "-" 0.000652
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests HTTP/1.1" 200 297 "-" "-" 0.000096
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/1 HTTP/1.1" 200 147 "-" "-" 0.000136
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/3 HTTP/1.1" 404 68 "-" "-" 0.000119
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 400 79 "-" "-" 0.000107
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 400 82 "-" "-" 0.000088
+[2022-09-09T02:24:11Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1137 "-" "-" 0.000496
+[2022-09-09T02:24:12Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1187 "-" "-" 0.000243
+[2022-09-09T02:24:13Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1223 "-" "-" 0.000320
+[2022-09-09T02:24:13Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 400 74 "-" "-" 0.000174
+[2022-09-09T02:24:13Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/1/ranklist HTTP/1.1" 200 58 "-" "-" 0.000152
+[2022-09-09T02:24:13Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/2/ranklist HTTP/1.1" 200 59 "-" "-" 0.000114

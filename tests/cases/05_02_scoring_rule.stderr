@@ -1,0 +1,19 @@
+[2022-09-09T02:19:26Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:19:26Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:19:27Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000171
+[2022-09-09T02:19:27Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.000489
+[2022-09-09T02:19:27Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /users HTTP/1.1" 200 23 "-" "-" 0.001143
+[2022-09-09T02:19:27Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1137 "-" "-" 0.000593
+[2022-09-09T02:19:28Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 1222 "-" "-" 0.000368
+[2022-09-09T02:19:28Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 1122 "-" "-" 0.001193
+[2022-09-09T02:19:29Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/1 HTTP/1.1" 200 1207 "-" "-" 0.000322
+[2022-09-09T02:19:29Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.001191
+[2022-09-09T02:19:30Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 426 "-" "-" 0.000219
+[2022-09-09T02:19:30Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.000924
+[2022-09-09T02:19:31Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/3 HTTP/1.1" 200 426 "-" "-" 0.000336
+[2022-09-09T02:19:31Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.001377
+[2022-09-09T02:19:32Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/4 HTTP/1.1" 200 432 "-" "-" 0.000349
+[2022-09-09T02:19:32Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.001342
+[2022-09-09T02:19:33Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/5 HTTP/1.1" 200 432 "-" "-" 0.000344
+[2022-09-09T02:19:33Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=latest HTTP/1.1" 200 199 "-" "-" 0.000262
+[2022-09-09T02:19:33Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /contests/0/ranklist?scoring_rule=highest HTTP/1.1" 200 203 "-" "-" 0.000155

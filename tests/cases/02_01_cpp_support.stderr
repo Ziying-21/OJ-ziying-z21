@@ -1,0 +1,10 @@
+[2022-09-09T02:18:55Z INFO  actix_server::builder] Starting 8 workers
+[2022-09-09T02:18:55Z INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2022-09-09T02:18:56Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET / HTTP/1.1" 404 0 "-" "-" 0.000233
+[2022-09-09T02:18:56Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 377 "-" "-" 0.000866
+[2022-09-09T02:18:57Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/0 HTTP/1.1" 200 426 "-" "-" 0.000585
+[2022-09-09T02:18:57Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 406 "-" "-" 0.001646
+[2022-09-09T02:18:58Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/1 HTTP/1.1" 200 456 "-" "-" 0.000284
+[2022-09-09T02:18:58Z INFO  actix_web::middleware::logger] 127.0.0.1 "POST /jobs HTTP/1.1" 200 420 "-" "-" 0.001596
+[2022-09-09T02:18:59Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 419 "-" "-" 0.000221
+[2022-09-09T02:19:00Z INFO  actix_web::middleware::logger] 127.0.0.1 "GET /jobs/2 HTTP/1.1" 200 471 "-" "-" 0.000232
